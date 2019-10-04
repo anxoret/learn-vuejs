@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div class="">
+        <div id="vue">
+            
+            <!-- v-for - аналог forEach в PHP
+            эту директиву нужно всегда указывать, там, где хотим, чтобы элемент 
+            повторялся -->
+            <ul>
+                <li v-for="(item, index) in list">index {{ index }}: {{ item }}</li>
+            </ul>
+
+            <ul>
+                <li v-for="user in users">{{ user.id }}: {{ user.name }}</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        let app = new Vue({
+            el: "#vue",
+            data: {
+                list: ['один', 'два', 'три'],
+                users: [
+                    {id: 1, name: 'Иван'},
+                    {id: 2, name: 'Сергей'}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
