@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="sample">
+            <!-- v-model="name" -->
+            <input type="text"  v-bind:value="name" v-on:input="name = $event.target.value">
+            <hr>
+            <h2>Hello, {{ name }}!</h2>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        let sample = new Vue({
+            el:".sample",
+            data: {
+                name: "fsdf"
+            }
+        });
+    </script>
+</body>
+</html>
