@@ -2,13 +2,16 @@
   <div id="app">
     <h1>Todo appliction</h1>
     <hr>
+    <Todolist />
   </div>
 </template>
 
 <script>
+import TodoList from "./components/TodoList"
 export default {
   name: 'app',
   components: {
+    TodoList, 
   }
 }
 </script>
