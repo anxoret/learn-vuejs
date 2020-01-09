@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .slide-enter {
+            opacity: 0;
+        }
+
+        .slide-enter-active {
+            transition: opacity 0.5s;
+        }
+
+        .slide-live-active {
+            transition: opacity 0.5s;
+        }
+
+        .slide-leave-to {
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
     <div class="wrapper">
@@ -13,7 +30,9 @@
                 {{ showH2 ? "Hide result" : "Show result" }}
             </button>
             <hr>
-            <h2 v-show="showH2">Your profit: {{ sum }}!</h2>
+            <transition name="slide">
+                <h2 v-show="showH2">Your profit: {{ sum }}!</h2>
+            </transition>
             <hr>
             <button v-on:click="addNumber">
                 Add number
@@ -30,6 +49,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        Vue.component
+
         let sample = new Vue({
             el: ".sample",
             data: {
